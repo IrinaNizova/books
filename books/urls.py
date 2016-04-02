@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.generic import TemplateView
 from prof.api import BookResource, ProfileResource
+from prof import views
 from tastypie.api import Api
 
 expense_resource = BookResource()
@@ -26,5 +28,6 @@ v1_api.register(ProfileResource())
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(expense_resource.urls))
+    url(r'^api/', include(v1_api.urls)),
+    url(r'^$', TemplateView.as_view(template_name="index.html"))
 ]

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <script src="{% static "static/js/jquery-2.2.2.min.js" %}"></script>
+    <script src="{% static "static/js/underscore-min.js" %}">
+    </script>
+    <script src="{% static "static/js/backbone.js" %}"></script>
+    <script src="{% static "static/js/app.js" %}"></script>
+    <title>Title</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <form id="add-new-book">
+    <label for="book-name">Имя</label><br>
+      <input type="text" name="book-name" id="book-name"><br>
+    <label for="book-author">Автор</label><br>
+      <input type="text" name="book-author" id="book-author"><br>
+    <label for="book-price">Цена</label><br>
+      <input type="text" name="book-price" id="book-price">
+    <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>
